@@ -4,14 +4,20 @@
 ## Write a short comment describing this function
 
 makeCacheMatrix <- function(x = matrix()) {
+        # set the inv value to null
         inv <- NULL
+        # set the value of the matrix
         set <- function(y) {
                 x <<- y
-                inv <<- NULL
+                inv <<- NULL # since the matrix has changed
         }
+        # to get the value of the matrix
         get <- function() x
+        # to set the inverse
         setinv <- function(inv_) inv <<- inv_
+        # to get the inverse
         getinv <- function() inv
+        # to return a list of all above functions
         list(set = set, get = get,
              setinv = setinv,
              getinv = getinv)
